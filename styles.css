@@ -2,3 +2,8 @@
 .plot .tick text {
   font-size: 30px;
 }
+
+body, main {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}

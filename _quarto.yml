@@ -13,9 +13,6 @@ website:
   title: "Fusión Telecom y Telefónica"
   repo-url: https://github.com/pablocerchia/fusionv2
   repo-actions: [source]
-  navbar:
-    background: primary
-    search: true
 
 format:
   html:
