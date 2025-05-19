@@ -1,1 +1,4 @@
 /* css styles */ 
+.plot .tick text {
+  font-size: 30px;
+}

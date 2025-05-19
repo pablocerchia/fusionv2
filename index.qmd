@@ -24,7 +24,10 @@ execute:
  ![](fondo_compra.jpg){.scale-to-fill}
 :::
 
-@cr-headline <span style="font-size: 48pt; font-weight: bold; text-align: center; color: #171a1f; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FUSIÓN <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TELECOM Y TELEFÓNICA</span> 
+@cr-headline <span style="font-size: 48pt; font-weight: bold; text-align: center; color: #171a1f; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">FUSIÓN TELECOM Y TELEFÓNICA</span> 
+
+@cr-headline <span style="font-size: 38pt; font-weight: bold; text-align: center; color: #171a1f; ">¿Cómo impacta al mercado de Internet?</span> 
+
 
 @cr-headline La empresa del Grupo Clarín desembolsó US$ 1.245 millones para quedarse con Telefónica Argentina. 
 
@@ -48,7 +51,7 @@ market_data_ojs = market_data_ojs_raw.map(d => ({
 viewof chart = Plot.plot({
   title: "",
   marginLeft: 150,
-  marginRight: 50,
+  marginRight: 50, 
   height: 700,
   width: 850,
   marks: [
@@ -68,7 +71,7 @@ viewof chart = Plot.plot({
     Plot.ruleX([0])
   ],
   y: {
-    label: "Grupo",
+    label: " ",
     tickLabelAnchor: "start",
     domain: market_data_ojs.sort((a, b) => b["Share pre fusion"] - a["Share pre fusion"]).map(d => d["Grupo ME"]),
     padding: 0.3
@@ -119,7 +122,7 @@ viewof chart_highlighted = Plot.plot({
     Plot.ruleX([0])
   ],
   y: {
-    label: "Grupo",
+    label: " ",
     tickLabelAnchor: "start",
     domain: market_data_ojs.sort((a, b) => b["Share pre fusion"] - a["Share pre fusion"]).map(d => d["Grupo ME"]),
     padding: 0.3
@@ -136,7 +139,7 @@ viewof chart_highlighted = Plot.plot({
 
 ::::{.cr-section}
 
-Un detalle más cercano a estos dos competidores: [@cr-market-plot-zoomed]{scale-by="1.2"}
+Un detalle más cercano a estos dos competidores: @cr-market-plot-zoomed
 
 :::{#cr-market-plot-zoomed}
 ```{ojs}
@@ -171,7 +174,7 @@ viewof chart_zoomed = Plot.plot({
     Plot.ruleX([0])
   ],
   y: {
-    label: "Grupo",
+    label: " ",
     tickLabelAnchor: "start",
     domain: zoomed_data.map(d => d["Grupo ME"]), // Domain is just these two
     padding: 0.5 // More padding for fewer bars
@@ -280,7 +283,7 @@ provincia_data = await FileAttachment("PROVINCIA_MOVISTAR.csv").csv({ typed: fal
 provincia_data_processed = provincia_data
   .filter(d => d.Provincia) // Filter out empty rows
   .map(d => ({
-    Provincia: d.Provincia,
+    Provincia: d.Provincia === "CIUDAD AUTONOMA DE BUENOS AIRES" ? "CABA" : d.Provincia,
     "Abonados pre fusion": parseInt(d["Abonados pre fusion"].replace(/,/g, '')) // Remove commas and convert to number
   }))
   .sort((a, b) => b["Abonados pre fusion"] - a["Abonados pre fusion"]);
@@ -288,7 +291,7 @@ provincia_data_processed = provincia_data
 // Provincias a destacar
 provinciasDestacadas = [
   "BUENOS AIRES",
-  "CIUDAD AUTONOMA DE BUENOS AIRES",
+  "CABA",
   "MENDOZA"
 ];
 
@@ -316,7 +319,7 @@ viewof chart_provincias = Plot.plot({
     Plot.ruleX([0])
   ],
   y: {
-    label: "Provincia",
+    label: " ",
     tickLabelAnchor: "start",
     domain: provincia_data_processed.map(d => d.Provincia),
     padding: 0.3
@@ -383,7 +386,7 @@ Plot.plot({
 
 [@cr-mapa-concentracion]{scale-by="16.8"} El 81% de sus abonados se concentran en CABA, Buenos Aires y Mendoza.
 
-[@cr-barras-provincias]{scale-by="1.2"} La distribución de abonados muestra una clara concentración en tres provincias principales.
+@cr-barras-provincias La distribución de abonados muestra una clara concentración en tres provincias principales.
 
 ::::
 
@@ -437,7 +440,7 @@ Plot.plot({
 ```
 :::
 
-[@cr-mapa-patagonia]{scale-by="7.4"} Las provincias donde Movistar tiene una posición más dominante en el market share es en la Patagonia, con participaciones que van desde el 36% hasta el 45% del mercado.
+[@cr-mapa-patagonia]{scale-by="7.4"} Las provincias donde Movistar tiene una posición más dominante en el market share se encuentran en la región patagonica.
 
 [@cr-mapa-patagonia]{pan-to="0%,-45%" scale-by="16.4"} Estas son: Río Negro, Chubut, Tierra del Fuego y Neuquén.
 
@@ -451,7 +454,7 @@ provincia_share_data = await FileAttachment("PROVINCIA_MOVISTAR.csv").csv({ type
 provincia_share_processed = provincia_share_data
   .filter(d => d.Provincia) // Filter out empty rows
   .map(d => ({
-    Provincia: d.Provincia,
+    Provincia: d.Provincia === "CIUDAD AUTONOMA DE BUENOS AIRES" ? "CABA" : d.Provincia,
     "Share pre fusion": parseFloat(d["Share pre fusion"].replace('%', ''))
   }))
   .sort((a, b) => b["Share pre fusion"] - a["Share pre fusion"]);
@@ -480,7 +483,7 @@ viewof chart_share = Plot.plot({
     Plot.ruleX([0])
   ],
   y: {
-    label: "Provincia",
+    label: " ",
     tickLabelAnchor: "start",
     domain: provincia_share_processed.map(d => d.Provincia),
     padding: 0.3
@@ -493,7 +496,7 @@ viewof chart_share = Plot.plot({
 ```
 :::
 
-[@cr-barras-share]{scale-by="1.2"} En estas provincias del sur, Movistar alcanza sus mayores niveles de participación de mercado, llegando al 45.6% en Río Negro y 43.6% en Chubut.
+@cr-barras-share En estas provincias del sur, Movistar alcanza sus mayores niveles de participación de mercado, llegando al 45.6% en Río Negro y 43.6% en Chubut.
 
 ::::
 
@@ -874,12 +877,12 @@ viewof chart_flow_post = Plot.plot({
 
 [@cr-mapa-post-fusion]{scale-by="7.8"} Tras la fusión, Flow pasará a ser <span style="color:#8A26C9">**LÍDER DE MERCADO**</span> en 17 de esas provincias y tendría cobertura en todas las provincias del país.
  
-[@cr-barras-agrupadas]{scale-by="1.2"} Veámos en detalle el impacto de la fusión en el Market Share de Flow.  
+[@cr-barras-agrupadas]{scale-by="0.9"} Veámos en detalle el impacto de la fusión en el Market Share de Flow.  
 
 
-[@cr-barras-comparacion]{scale-by="1.3"} Así quedaría el Market Share de Flow en las provincias que comparte cobertura con Movistar.
+[@cr-barras-comparacion]{scale-by="0.9"} Este sería el impacto de la fusión en el Market Share de Flow si le sumamos el Share de Movistar en las provincias que ambas comparten cobertura.
 
-[@cr-barras-flow-post]{scale-by="1.3"} Así quedaría el Market Share de Flow en las provincias que comparte cobertura con Movistar.
+[@cr-barras-flow-post]{scale-by="0.9"} Tras la fusión, el Market Share de Flow en dichas provincias se vería así. En distritos como CABA, Neuquén, San Juan y Río Negro, la empresa de Telecom pasaría a tener una posición totalmente dominante.
 
 ::::
 
@@ -942,7 +945,7 @@ viewof chart_nacional = Plot.plot({
 ```
 :::
 
-[@cr-nacional-share]{scale-by="1.2"} A nivel nacional, Flow lidera el mercado con un 34.7% de participación, seguido por otros operadores con 18.9%. Movistar, que será adquirida por Flow, actualmente tiene un 12.9% del mercado.
+[@cr-nacional-share]{scale-by="0.9"} A nivel nacional, Flow lidera el mercado con un 34.7% de participación, seguido por otros operadores con 18.9%. Movistar, que será adquirida por Flow, actualmente tiene un 12.9% del mercado.
 
 :::{#cr-nacional-share-post}
 ```{ojs}
@@ -997,6 +1000,6 @@ viewof chart_nacional_post = Plot.plot({
 ```
 :::
 
-[@cr-nacional-share-post]{scale-by="1.2"} Tras la fusión, Flow alcanzará un 47.5% del mercado nacional, consolidándose como el líder indiscutido del sector. El siguiente competidor más cercano mantendrá un 18.9% de participación.
+[@cr-nacional-share-post]{scale-by="0.9"} Tras la fusión, Flow alcanzará un 47.5% del mercado nacional, consolidándose como el líder indiscutido del sector. El siguiente competidor más cercano mantendrá un 18.9% de participación.
 
 ::::
