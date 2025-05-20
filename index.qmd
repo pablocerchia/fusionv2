@@ -24,7 +24,7 @@ execute:
  ![](FABRICLOGO.png){.scale-to-fill}
 :::
 
-@cr-headline2 <span style="font-size: 48pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">AUDINET REPORT</span> 
+@cr-headline2 <span style="font-size: 48pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">AUDINET REPORT<br></span> <span style="font-size: 24pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">La fusión de Telecom y Telefónica</span> 
 
 ::::
 
