@@ -88,7 +88,7 @@ viewof chart = Plot.plot({
 
 ::::{.cr-section}
 
-Flow y Movistar son de los principales players dentro del mercado @cr-market-plot-highlighted
+Flow y Movistar son dos de los principales players dentro del mercado @cr-market-plot-highlighted
 
 :::{#cr-market-plot-highlighted}
 ```{ojs}
@@ -440,7 +440,7 @@ Plot.plot({
 ```
 :::
 
-[@cr-mapa-patagonia]{scale-by="7.4"} Las provincias donde Movistar tiene una posición más dominante en el market share se encuentran en la región patagonica.
+[@cr-mapa-patagonia]{scale-by="7.4"} Las provincias donde Movistar tiene una posición más dominante en el market share se encuentran en la región patagónica.
 
 [@cr-mapa-patagonia]{pan-to="0%,-45%" scale-by="16.4"} Estas son: Río Negro, Chubut, Tierra del Fuego y Neuquén.
 
@@ -945,7 +945,7 @@ viewof chart_nacional = Plot.plot({
 ```
 :::
 
-[@cr-nacional-share]{scale-by="0.9"} A nivel nacional, Flow lidera el mercado con un 34.7% de participación, seguido por otros operadores con 18.9%. Movistar, que será adquirida por Flow, actualmente tiene un 12.9% del mercado.
+[@cr-nacional-share]{scale-by="0.9"} A nivel nacional, Flow lidera el mercado con un 34.7% de participación, seguido por Claro con 15.1%. Movistar, que será adquirida por Flow, actualmente tiene un 12.9% del mercado.
 
 :::{#cr-nacional-share-post}
 ```{ojs}
