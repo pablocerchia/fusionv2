@@ -1000,6 +1000,6 @@ viewof chart_nacional_post = Plot.plot({
 ```
 :::
 
-[@cr-nacional-share-post]{scale-by="0.9"} Tras la fusión, Flow alcanzará un 47.5% del mercado nacional, consolidándose como el líder indiscutido del sector. El siguiente competidor más cercano mantendrá un 18.9% de participación.
+[@cr-nacional-share-post]{scale-by="0.9"} Tras la fusión, Flow alcanzará un 47.5% del mercado nacional, consolidándose como el líder indiscutido del sector. El siguiente competidor más cercano mantendrá un 15.1% de participación.
 
 ::::
