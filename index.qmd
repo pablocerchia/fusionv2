@@ -34,8 +34,6 @@ execute:
  ![](logo_fusionado2.png){.scale-to-fill}
 :::
 
-@cr-headline <span style="font-size: 48pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">FUSIÓN TELECOM Y TELEFÓNICA</span> 
-
 @cr-headline <span style="font-size: 38pt; font-weight: bold; text-align: center; color: #FFFFFF; ">¿Cómo impacta al mercado de Internet?</span> 
 
 
