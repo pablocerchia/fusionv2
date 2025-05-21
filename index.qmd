@@ -56,6 +56,7 @@ viewof chart = Plot.plot({
   title: "",
   marginLeft: 150,
   marginRight: 50, 
+  marginTop: 0,
   height: 700,
   width: 850,
   marks: [
@@ -107,6 +108,7 @@ viewof chart_highlighted = Plot.plot({
   title: "", // Added a slightly different title
   marginLeft: 150,
   marginRight: 50, 
+  marginTop: 0,
   height: 700,
   width: 850,
   marks: [
@@ -931,6 +933,17 @@ viewof chart_nacional_post = Plot.plot({
 [@cr-nacional-share-post]{scale-by="0.9"} Tras la fusión, Flow alcanzará un 47.5% del mercado nacional, lo que lo convertirá en el líder indiscutido del sector. El siguiente competidor más cercano mantendrá un 15.1% de participación.
 
 ::::
+
+::::{.cr-section}
+
+:::{#cr-headline_reflexiones}
+
+:::
+
+@cr-headline_reflexiones <span style="font-size: 30pt; font-weight: bold; text-align: center; color: #FFFFFF;">¿Cómo afectará la fusión a los abonados?<br><br></span><span style="font-size: 20pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">Flow ofrece ksahdasojhasdjhasd</span>
+
+::::
+
 
 ::::{.cr-section}
 
