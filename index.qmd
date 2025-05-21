@@ -1039,7 +1039,7 @@ md`<div style="padding-left: 110px; padding-top: 30px; font-weight: bold;">Movis
 ```
 :::
 
-@cr-headline_reflexiones <span style="font-size: 30pt; font-weight: bold; text-align: center; color: #FFFFFF;">¿Cómo afectará la fusión a los abonados?<br><br></span><span style="font-size: 20pt; text-align: center; color: #FFFFFF;">• Flow ofrece solo 3 planes desde 100MB hasta 1000MB con precios entre $43.000 y $81.000<br><br> • Movistar tiene una oferta más diversificada con velocidades desde 100MB hasta 1000MB y precios más bajos, desde $31.390 hasta $46.090.</span>
+@cr-headline_reflexiones <span style="font-size: 30pt; font-weight: bold; text-align: center; color: #FFFFFF;">¿Cómo afectará la fusión a los abonados teniendo en cuenta que ofrecen servicios distintos actualmente?<br><br></span><span style="font-size: 20pt; text-align: center; color: #FFFFFF;">• Flow ofrece solo 3 planes desde 100MB hasta 1000MB con precios entre $43.000 y $81.000<br><br> • Movistar tiene una oferta más diversificada con velocidades desde 100MB hasta 1000MB y precios más bajos, desde $31.390 hasta $46.090.</span>
 
 ::::
 
