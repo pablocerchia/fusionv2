@@ -93,7 +93,7 @@ viewof chart = Plot.plot({
 
 ::::{.cr-section}
 
-Así se distribuye el Market Share en Argentina previo a la adquisición. <br><br>Dentro del market share previo a la fusión, Flow (Telecom) y Movistar (Telefónica) son dos de los principales players dentro del mercado @cr-market-plot-highlighted
+Así se distribuye el Market Share en Argentina previo a la adquisición. <br><br>Flow (Telecom) y Movistar (Telefónica) son dos de los principales players dentro del mercado. @cr-market-plot-highlighted
 
 :::{#cr-market-plot-highlighted}
 ```{ojs}
@@ -937,13 +937,111 @@ viewof chart_nacional_post = Plot.plot({
 ::::{.cr-section}
 
 :::{#cr-headline_reflexiones}
+```{ojs}
+//| echo: false
 
+// Load and process the data
+data = {
+  const velocidad_data = await FileAttachment("abonosxvelocidad.csv").csv({ typed: false });
+  
+  // Process Flow data
+  const flow_data = velocidad_data
+    .filter(d => d.Empresa === "Flow")
+    .map(d => ({
+      Velocidad: d.Velocidad,
+      Precio: parseFloat(d.Precio.replace(/[^0-9.]/g, ''))
+    }));
+    
+  // Process Movistar data
+  const movistar_data = velocidad_data
+    .filter(d => d.Empresa === "Movistar")
+    .map(d => ({
+      Velocidad: d.Velocidad,
+      Precio: parseFloat(d.Precio.replace(/[^0-9.]/g, ''))
+    }));
+    
+  return {flow_data, movistar_data};
+}
+
+md`<div style="padding-left: 110px;font-weight: bold;">Flow</div>`
+
+// Flow Chart
+{
+  const chart = Plot.plot({
+    marginLeft: 140,
+    marginRight: 150,
+    width: 850,
+    height: 200,
+    x: {
+      grid: true,
+      label: null
+    },
+    y: {
+      label: null,
+      domain: data.flow_data.map(d => d.Velocidad)
+    },
+    marks: [
+      Plot.barX(data.flow_data, {
+        y: "Velocidad",
+        x: "Precio",
+        fill: "#9800A6",
+        title: d => `${d.Velocidad}: $${d.Precio.toLocaleString('es-AR')}`
+      }),
+      Plot.text(data.flow_data, {
+        y: "Velocidad",
+        x: "Precio",
+        text: d => `$${d.Precio.toLocaleString('es-AR')}`,
+        dx: 30,
+        fill: "black",
+        fontSize: 14
+      })
+    ]
+  });
+  return chart;
+}
+
+md`<div style="padding-left: 110px; padding-top: 30px; font-weight: bold;">Movistar</div>`
+
+// Movistar Chart
+{
+  const chart = Plot.plot({
+    marginLeft: 140,
+    marginRight: 150,
+    width: 850,
+    height: 300,
+    x: {
+      grid: true,
+      label: null
+    },
+    y: {
+      label: null,
+      domain: data.movistar_data.map(d => d.Velocidad)
+    },
+    marks: [
+      Plot.barX(data.movistar_data, {
+        y: "Velocidad",
+        x: "Precio",
+        fill: "#F34073",
+        title: d => `${d.Velocidad}: $${d.Precio.toLocaleString('es-AR')}`
+      }),
+      Plot.text(data.movistar_data, {
+        y: "Velocidad",
+        x: "Precio",
+        text: d => `$${d.Precio.toLocaleString('es-AR')}`,
+        dx: 30,
+        fill: "black",
+        fontSize: 14
+      })
+    ]
+  });
+  return chart;
+}
+```
 :::
 
-@cr-headline_reflexiones <span style="font-size: 30pt; font-weight: bold; text-align: center; color: #FFFFFF;">¿Cómo afectará la fusión a los abonados?<br><br></span><span style="font-size: 20pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">Flow ofrece ksahdasojhasdjhasd</span>
+@cr-headline_reflexiones <span style="font-size: 30pt; font-weight: bold; text-align: center; color: #FFFFFF;">¿Cómo afectará la fusión a los abonados?<br><br></span><span style="font-size: 20pt; text-align: center; color: #FFFFFF;">• Flow ofrece solo 3 planes desde 100MB hasta 1000MB con precios entre $43.000 y $81.000<br><br> • Movistar tiene una oferta más diversificada con velocidades desde 100MB hasta 1000MB y precios más bajos, desde $31.390 hasta $46.090.</span>
 
 ::::
-
 
 ::::{.cr-section}
 
