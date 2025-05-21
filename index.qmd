@@ -593,14 +593,6 @@ Plot.plot({
 ```
 :::
 
-[@cr-logoflow]{scale-by="0.7"} Actualmente Flow es el líder en el mercado de Internet en Argentina con 3.9 millones de abonados y 34.68% de Market Share.
-
-[@cr-mapa-flow]{scale-by="7.4"} Tiene presencia en 23 provincias.
-
-::::
-
-::::{.cr-section}
-
 :::{#cr-mapa-fusion}
 ```{ojs}
 //| echo: false
@@ -661,7 +653,11 @@ Plot.plot({
 ```
 :::
 
-[@cr-mapa-fusion]{scale-by="7.6"} Hoy en día Flow es <span style="color:#FFAC26">**LÍDER DE MERCADO**</span> en 13 de esas provincias.
+[@cr-logoflow]{scale-by="0.7"} Actualmente Flow es el líder en el mercado de Internet en Argentina con 3.9 millones de abonados y 34.68% de Market Share.
+
+[@cr-mapa-flow]{scale-by="7.4"} Tiene presencia en 23 provincias.
+
+[@cr-mapa-fusion]{scale-by="7.4"} Hoy en día Flow es <span style="color:#FFAC26">**LÍDER DE MERCADO**</span> en 13 de esas provincias.
 
 ::::
 
@@ -1009,5 +1005,23 @@ viewof chart_nacional_post = Plot.plot({
 :::
 
 [@cr-nacional-share-post]{scale-by="0.9"} Tras la fusión, Flow alcanzará un 47.5% del mercado nacional, lo que lo convertirá en el líder indiscutido del sector. El siguiente competidor más cercano mantendrá un 15.1% de participación.
+
+::::
+
+::::{.cr-section}
+
+:::{#cr-headline_fotocarnet}
+
+ ![](jime_foto.png){width="120px"}
+ <div style="text-align: center; color: #171A1F; font-weight: bold; padding-top: 10px;">Jimena Municoy<br><br><br></div>
+
+ ![](thelma_foto.png){width="120px"}
+ <div style="text-align: center; color: #171A1F; font-weight: bold; padding-top: 10px;">Thelma Fratarelli<br><br><br></div>
+
+  ![](pablo_foto.png){width="120px"}
+ <div style="text-align: center; color: #171A1F; font-weight: bold; padding-top: 10px;">Pablo Cerchia</div>
+:::
+
+@cr-headline_fotocarnet <span style="font-size: 20pt; font-weight: bold; text-align: center; color: #FFFFFF;">hecho por<br></span><span style="font-size: 49pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">AUDINET TEAM</span>
 
 ::::
