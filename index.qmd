@@ -1022,6 +1022,6 @@ viewof chart_nacional_post = Plot.plot({
  <div style="text-align: center; color: #171A1F; font-weight: bold; padding-top: 10px;">Pablo Cerchia</div>
 :::
 
-@cr-headline_fotocarnet <span style="font-size: 20pt; font-weight: bold; text-align: center; color: #FFFFFF;">hecho por<br></span><span style="font-size: 49pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">AUDINET TEAM</span>
+@cr-headline_fotocarnet <span style="font-size: 20pt; font-weight: bold; text-align: center; color: #FFFFFF;">ANÁLISIS REALIZADO POR<br></span><span style="font-size: 49pt; font-weight: bold; text-align: center; color: #FFFFFF; text-shadow: 1px 1px 4px rgba(0,0,0,0.3);">AUDINET</span>
 
 ::::
