@@ -37,11 +37,7 @@ execute:
 @cr-headline <span style="font-size: 38pt; font-weight: bold; text-align: center; color: #FFFFFF; ">¿Cómo impacta al mercado de Internet?</span> 
 
 
-@cr-headline La empresa del Grupo Clarín invirtió US$ 1.245 millones para quedarse con Telefónica Argentina. 
-
-@cr-headline La operación marca un hito histórico en el mercado argentino de telecomunicaciones. 
-
-@cr-headline Así se distribuye el Market Share en Argentina previo a la adquisición. @cr-market-plot
+@cr-headline La empresa del Grupo Clarín invirtió US$ 1.245 millones para quedarse con Telefónica Argentina. <br><br> La operación marca un hito histórico en el mercado argentino de telecomunicaciones. 
 
 :::{#cr-market-plot}
 ```{ojs}
@@ -96,7 +92,7 @@ viewof chart = Plot.plot({
 
 ::::{.cr-section}
 
-Dentro del market share previo a la fusión, Flow (Telecom) y Movistar (Telefónica) son dos de los principales players dentro del mercado @cr-market-plot-highlighted
+Así se distribuye el Market Share en Argentina previo a la adquisición. <br><br>Dentro del market share previo a la fusión, Flow (Telecom) y Movistar (Telefónica) son dos de los principales players dentro del mercado @cr-market-plot-highlighted
 
 :::{#cr-market-plot-highlighted}
 ```{ojs}
@@ -147,60 +143,6 @@ viewof chart_highlighted = Plot.plot({
 
 ::::{.cr-section}
 
-Un detalle más cercano a estos dos competidores: @cr-market-plot-zoomed
-
-:::{#cr-market-plot-zoomed}
-```{ojs}
-//| label: market-share-plot-zoomed
-//| echo: false
-//| fig.width: 30 
-//| fig.height: 8 // Adjusted height for fewer bars
-
-// market_data_ojs is assumed to be available from the previous OJS cell
-zoomed_data = market_data_ojs.filter(d => d["Grupo ME"] === "Flow" || d["Grupo ME"] === "Movistar");
-
-viewof chart_zoomed = Plot.plot({
-  title: "",
-  marginLeft: 150,
-  marginRight: 50, 
-  height: 400, // Adjusted height for fewer bars
-  width: 850,
-  marks: [
-    Plot.barX(zoomed_data, {
-      y: "Grupo ME",
-      x: "Share pre fusion",
-      fill: "#7600BF" // Keep highlight color
-    }),
-    Plot.text(zoomed_data, {
-      x: "Share pre fusion",
-      y: "Grupo ME",
-      text: d => d["Share pre fusion"].toFixed(1) + "%",
-      dx: 4, 
-      fill: "#333333",
-      textAnchor: "start"
-    }),
-    Plot.ruleX([0])
-  ],
-  y: {
-    label: " ",
-    tickLabelAnchor: "start",
-    domain: zoomed_data.map(d => d["Grupo ME"]), // Domain is just these two
-    padding: 0.5 // More padding for fewer bars
-  },
-  x: {
-    label: "Share (%)",
-    grid: true,
-    // Optional: Adjust domain to zoom on x-axis if desired, e.g.:
-    // domain: [0, Math.max(...zoomed_data.map(d => d["Share pre fusion"])) * 1.1] 
-  }
-})
-```
-:::
-
-::::
-
-::::{.cr-section}
-
 :::{#cr-mapa-base-presencia}
 ```{ojs}
 //| echo: false
@@ -220,8 +162,7 @@ Plot.plot({
     Plot.geo(mapa_geojson_data, {
       fill: "#E2E7EC",
       stroke: "white",
-      strokeWidth: 0.1,
-      tip: true
+      strokeWidth: 0.1
     })
   ],
   width: 2400,
@@ -360,8 +301,7 @@ Plot.plot({
     Plot.geo(mapa_geojson_data, {
       fill: "#E2E7EC",
       stroke: "white",
-      strokeWidth: 0.1,
-      tip: true
+      strokeWidth: 0.1
     }),
     Plot.geo(
       {
@@ -374,8 +314,7 @@ Plot.plot({
         fill: "#F34073",
         fillOpacity: 0.9,
         stroke: "black",
-        strokeWidth: 0.15,
-        tip: true
+        strokeWidth: 0.15
       }
     )
   ],
@@ -388,13 +327,9 @@ Plot.plot({
 ```
 :::
 
-[@cr-mapa-base-presencia]{scale-by="7.4"} ¿Cómo es la presencia de Movistar en el mercado?
-
-[@cr-mapa-activo]{scale-by="7.4"} Según el relevamiento de Fabric, Movistar tiene actualmente presencia en 14 provincias.
+[@cr-mapa-activo]{scale-by="7.4"} ¿Cómo es la presencia de Movistar en el mercado? <br><br>Según el relevamiento de Fabric, Movistar tiene cobertura en 14 provincias.
 
 [@cr-mapa-concentracion]{scale-by="16.8"} El 81% de sus abonados se concentran en CABA, Buenos Aires y Mendoza.
-
-@cr-barras-provincias El 81% de sus abonados se concentran en CABA, Buenos Aires y Mendoza.
 
 ::::
 
@@ -448,7 +383,7 @@ Plot.plot({
 ```
 :::
 
-[@cr-mapa-patagonia]{scale-by="7.4"} Las provincias donde Movistar tiene una posición más dominante en el market share se encuentran en la región patagónica.
+[@cr-mapa-patagonia]{scale-by="7.4"} Mientras que las provincias donde Movistar tiene una posición más dominante en el market share se encuentran en la región patagónica.
 
 [@cr-mapa-patagonia]{pan-to="0%,-45%" scale-by="16.4"} Estas son Río Negro (45.6%), Chubut (43.6%), Tierra del Fuego (37.2%) y Neuquén (36.2%).
 
@@ -505,17 +440,6 @@ viewof chart_share = Plot.plot({
 :::
 
 @cr-barras-share En estas provincias del sur, Movistar alcanza sus mayores niveles de participación de mercado, llegando al 45.6% en Río Negro y 43.6% en Chubut.
-
-::::
-
-::::{.cr-section layout="overlay-center"}
-
-
-:::{#cr-panorama}
-
-:::
-
-¿Cómo quedaría reconfigurada la presencia de Flow en el mercado? @cr-panorama 
 
 ::::
 
@@ -653,7 +577,7 @@ Plot.plot({
 ```
 :::
 
-[@cr-logoflow]{scale-by="0.7"} Actualmente Flow es el líder en el mercado de Internet en Argentina con 3.9 millones de abonados y 34.68% de Market Share.
+[@cr-logoflow]{scale-by="0.7"} ¿Cómo quedaría reconfigurada la presencia de Flow en el mercado? <br><br> Actualmente Flow es el líder en el mercado de Internet en Argentina con 3.9 millones de abonados y 34.68% de Market Share.
 
 [@cr-mapa-flow]{scale-by="7.4"} Tiene presencia en 23 provincias.
 
@@ -886,7 +810,7 @@ viewof chart_flow_post = Plot.plot({
 
 [@cr-barras-comparacion]{scale-by="0.9"} Este sería el impacto de la fusión en el Market Share de Flow si le sumamos el Share de Movistar en las provincias donde comparten cobertura.
 
-[@cr-barras-flow-post]{scale-by="0.9"} Tras la fusión, el Market Share de Flow en dichas provincias se vería así. En distritos como CABA (53.9%), Neuquén (46.7%), San Juan (51.2%) y Río Negro (54.8%), la empresa de Telecom pasaría a tener una posición totalmente dominante.
+[@cr-barras-flow-post]{scale-by="0.9"} Tras la fusión, el Market Share de Flow en dichas provincias se vería así.<br><br> En distritos como CABA (53.9%), Neuquén (46.7%), San Juan (51.2%) y Río Negro (54.8%), la empresa de Telecom pasaría a tener una posición totalmente dominante.
 
 ::::
 
